@@ -8,7 +8,6 @@ body {
     overflow: hidden;
 }
 
-
 canvas {
     overflow-y: hidden;
     overflow-x: hidden;
@@ -58,7 +57,6 @@ canvas {
     font-weight: bold;
 }
 
-
 #containerzero #info {
     font-size: 1rem;
     font-weight: lighter;
@@ -88,6 +86,11 @@ canvas {
 .container div.six {
     top: 10vh;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
 }
 
 .container div.seven,
@@ -181,25 +184,25 @@ canvas {
 }
 
 .six {
-   display: flex;
-  justify-content: center; /* Horizontal centering */
-  align-items: center;     /* Vertical centering */
-  flex-direction: column;  /* Stack items vertically */
-  text-align: center;      /* Center text if any */
+    position: relative;
 }
 
 .six img {
-    display: inline-block;
-    max-width: 100%;
+    display: block;
+    max-width: 250px;
     height: auto;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .six .hat {
     position: absolute;
     width: 80px;
     top: -90px;
-    left: 91.5%;
-    /* transform: scale(0.1); */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .baloons img {
@@ -282,6 +285,11 @@ canvas {
     fill: #9a90da;
 }
 
+.wish {
+    text-align: center;
+    margin-top: 20px;
+}
+
 .wish-hbd {
     font-size: 3em;
     margin: 0;
@@ -307,25 +315,32 @@ canvas {
 /* Media Queries */
 @media screen and (max-height: 1000px) {
     .six .hat {
-        left: 40%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
 @media screen and (max-height: 800px) {
     .six .hat {
-        left: 37%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
 @media screen and (max-height: 700px) {
     .six .hat {
-        left: 32%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .six img {
+        max-width: 200px;
     }
 }
 
 @media screen and (max-height: 850px) and (max-width: 450px) {
     .six .hat {
-        left: 32%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
@@ -356,6 +371,10 @@ canvas {
         top: -20px;
     }
 
+    .six img {
+        max-width: 180px;
+    }
+
     .wish-hbd {
         font-size: 2.2em;
     }
@@ -369,7 +388,6 @@ canvas {
         font-weight: lighter;
     }
 }
-
 
 .cake {
     position: absolute;
